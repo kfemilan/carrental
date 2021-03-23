@@ -11,10 +11,16 @@ export class HomeComponent implements OnInit {
   cars = [];
   rented = [];
 
-
-  constructor() { }
+  constructor(private store: FirebaseApp) { }
 
   ngOnInit(): void {
+    const db = this.store.firestore()
   }
+
+  addCar(){}
+
+  rentCar(){}
+
+  returnCar(){}
 
 }
