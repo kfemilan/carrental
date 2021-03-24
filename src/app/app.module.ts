@@ -6,6 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CarService } from './car.service';
 import { HomeComponent } from './home/home.component';
+import { AvailableCarComponent } from './available-car/available-car.component';
+import { AddCarComponent } from './add-car/add-car.component';
+import { RentedCarComponent } from './rented-car/rented-car.component';
 
 const config = {
   apiKey: "AIzaSyCztVRA4GItRkO4ctaL4RRnMO9J6JDEib8",
@@ -20,7 +23,10 @@ const config = {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AvailableCarComponent,
+    AddCarComponent,
+    RentedCarComponent
   ],
   imports: [
     BrowserModule,

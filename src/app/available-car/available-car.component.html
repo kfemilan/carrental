@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <div class="section" id="pic">
+        <img [src]="car.image">
+    </div>
+    <div class="section" id="details">
+        <div id="name">{{car.brand + ' ' + car.model | titlecase}}</div>
+        <div id="color">{{car.color | titlecase}}</div>
+        <div id="price">{{'₱' + car.price + '/day'}}</div>
+
+    </div>
+    <div class="section" id="rbutton">
+        <input type="button" (click)="rentCar()" value="rent">
+    </div>
+</div>

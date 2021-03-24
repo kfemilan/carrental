@@ -1,11 +1,16 @@
 <div class="wrapper">
     <div class="category" id="add">
-        <p>dfadf</p>
+        <app-add-car (add)="addCar($event)"></app-add-car>
     </div>
     <div class="category" id="available">
-        fdaf
+        <div *ngFor="let car of cars | async">
+            <app-available-car
+            [car]=car
+            (rent)="rentCar($event)"
+            ></app-available-car>
+        </div>
     </div>
     <div class="category" id="rented">
-        dfad
+        Rented Cars Go Here
     </div>
 </div>
