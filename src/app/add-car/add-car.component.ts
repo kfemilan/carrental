@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { CarService } from '../car.service';
 import { Car } from '../home/home.component';
 
 @Component({
@@ -16,18 +15,43 @@ export class AddCarComponent implements OnInit {
   }
 
   addCar(brand: string, model: string, color: string, price: string, image: string){
-    const car: Car = {
-      brand: brand,
-      model: model,
-      color: color,
-      price: +price,
-      image: image,
-      rentLength: 0,
-      returnDate: new Date()
+    const valid = this.validateForm();
+    if (valid) {
+      const car: Car = {
+        brand: brand,
+        model: model,
+        color: color,
+        price: +price,
+        image: image,
+        rentLength: 0,
+        returnDate: new Date()
+      }
+      this.add.emit(car)
+      this.clear()
+    } else {
+      alert("Please Complete the Form")
     }
-    this.add.emit(car)
-    console.log(car)
-    
+  }
+
+  validateForm() {
+    var brand = document.forms["addForm"]["brand"].value;
+    var color = document.forms["addForm"]["color"].value;
+    var model = document.forms["addForm"]["model"].value;
+    var price = document.forms["addForm"]["price"].value;
+    var image = document.forms["addForm"]["image"].value;
+
+    if (brand == "" || color == "" || model == "" || price == "" || image == ""){
+      return false;
+    }
+    return true;
+  }
+
+  clear(){
+    document.forms["addForm"]["brand"].value = "";
+    document.forms["addForm"]["color"].value = "";
+    document.forms["addForm"]["model"].value = "";
+    document.forms["addForm"]["price"].value = "";
+    document.forms["addForm"]["image"].value = "";
   }
 
 }

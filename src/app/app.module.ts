@@ -4,7 +4,6 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { CarService } from './car.service';
 import { HomeComponent } from './home/home.component';
 import { AvailableCarComponent } from './available-car/available-car.component';
 import { AddCarComponent } from './add-car/add-car.component';
@@ -33,7 +32,7 @@ const config = {
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule
   ],
-  providers: [CarService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

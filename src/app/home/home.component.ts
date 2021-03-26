@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseApp } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { carConverter, CarService } from '../car.service';
+
 
 @Component({
   selector: 'app-home',
@@ -10,8 +9,8 @@ import { carConverter, CarService } from '../car.service';
 })
 export class HomeComponent implements OnInit {
 
-  cars = this.store.collection('cars').valueChanges({idField: 'id'});
-  rented = this.store.collection('rented').valueChanges({idField: 'id'});
+  cars = this.store.collection('cars', ref => ref.orderBy("brand").orderBy("model").orderBy("color")).valueChanges({idField: 'id'})
+  rented = this.store.collection('rented', ref => ref.orderBy("returnDate")).valueChanges({idField: 'id'});
 
   constructor(private store: AngularFirestore) { }
 
@@ -44,5 +43,5 @@ export interface Car{
   image: string;
   price: number;
   rentLength: number;
-  returnDate: Date;
+  returnDate: any;
 }

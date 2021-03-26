@@ -18,11 +18,16 @@ export class AvailableCarComponent implements OnInit {
 
   rentCar() {
     const duration = prompt("Rent Duration (days)")
-    if (duration != null && +duration > 0)
+    if (duration != null && +duration >= 0){
       this.car.rentLength = +duration;
       this.car.returnDate = new Date()
       this.car.returnDate.setDate(this.car.returnDate.getDate() + +this.car.rentLength)
       this.rent.emit(this.car);
+    } else if (+duration < 0) {
+      alert("Rental days must be 0 or more")
+    } else {
+      alert("Wrong input")
+    }
   }
 
 }

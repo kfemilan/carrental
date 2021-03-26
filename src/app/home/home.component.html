@@ -11,6 +11,11 @@
         </div>
     </div>
     <div class="category" id="rented">
-        Rented Cars Go Here
+        <div *ngFor="let car of rented | async">
+            <app-rented-car
+            [car]=car
+            (ret)="returnCar($event)"
+            ></app-rented-car>
+        </div>
     </div>
 </div>

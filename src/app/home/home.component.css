@@ -14,6 +14,7 @@
     width: 30%;
     border-radius: 30px;
     transition: 0.2s ease-in-out;
+    overflow: auto;
 }
 
 .category:hover{
@@ -22,9 +23,9 @@
 }
 
 #available{
-    background-color: #E4DFDA;
+    background-color: #262626;
 }
 
 #add, #rented{
-    background-color: #FF5964;
+    background-color: #255C99;
 }
