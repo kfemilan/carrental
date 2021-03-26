@@ -3,14 +3,19 @@
         <app-add-car (add)="addCar($event)"></app-add-car>
     </div>
     <div class="category" id="available">
+        <div>
+            <h1>Available Cars</h1>
+        </div>
         <div *ngFor="let car of cars | async">
             <app-available-car
             [car]=car
             (rent)="rentCar($event)"
+            (delete)="deleteCar($event)"
             ></app-available-car>
         </div>
     </div>
     <div class="category" id="rented">
+        <h1>Rented Cars</h1>
         <div *ngFor="let car of rented | async">
             <app-rented-car
             [car]=car

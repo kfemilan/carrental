@@ -6,7 +6,7 @@
         <div id="details">
             <div id="name">{{car.brand + ' ' + car.model | titlecase}}</div>
             <div id="color">{{car.color | titlecase}}</div>
-            <div id="price">{{'₱' + car.price + '/day'}}</div>
+            <div id="price">{{'₱' + car.price*car.rentLength}}</div>
             <div id="return">{{car.returnDate.seconds*1000 | date}}</div>
         </div>
     </div>

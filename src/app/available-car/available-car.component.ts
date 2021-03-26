@@ -8,7 +8,8 @@ import { Car } from '../home/home.component';
 })
 export class AvailableCarComponent implements OnInit {
 
-  @Output() rent = new EventEmitter<any>();
+  @Output() rent = new EventEmitter<Car>();
+  @Output() delete = new EventEmitter<Car>();
   @Input() car: Car;
 
   constructor() { }
@@ -27,6 +28,13 @@ export class AvailableCarComponent implements OnInit {
       alert("Rental days must be 0 or more")
     } else {
       alert("Wrong input")
+    }
+  }
+
+  deleteCar() {
+    const conf = confirm("Are you sure you want to delete this vehicle?")
+    if (conf){
+      this.delete.emit(this.car);
     }
   }
 

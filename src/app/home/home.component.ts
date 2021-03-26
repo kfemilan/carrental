@@ -33,6 +33,10 @@ export class HomeComponent implements OnInit {
     this.store.collection('cars').add(car)
   }
 
+  deleteCar(car: Car){
+    this.store.collection('cars').doc(car.id).delete()
+  }
+
 }
 
 export interface Car{

@@ -4,6 +4,7 @@
     justify-content: space-evenly;
     width: 100%;
     height: 100%;
+    background-color: #60b2e5;
 }
 
 .category{
@@ -22,10 +23,17 @@
     width: 35%;
 }
 
+
 #available{
     background-color: #262626;
 }
 
 #add, #rented{
     background-color: #255C99;
+}
+
+h1{
+    color: white;
+    padding: 5px;
+    margin: 5px;
 }

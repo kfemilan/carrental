@@ -1,16 +1,37 @@
-<div class="wrapper">
+<div>
     <form name="addForm">
-        <h4>Brand</h4>
-        <input type="text" name="brand" #brand>
-        <h4>Model</h4>
-        <input type="text" name="model" #model>
-        <h4>Color</h4>
-        <input type="text" name="color" #color>
-        <h4>Price</h4>
-        <input type="number" name="price" #price>
-        <h4>Image</h4>
-        <input type="text" name="image" #image>
-        <input type="reset" value="Clear">
-        <input type="button" (click)="addCar(brand.value, model.value, color.value, price.value, image.value)" value="Add">
+        <div class="wrapper">
+            <div class="section">
+                <h1>Add Car</h1>
+            </div>
+            <div class="section" id="brand">
+                <p>Brand</p>
+                <input type="text" name="brand" #brand autocomplete="off">
+            </div>
+            <div class="section" id="model">
+                <p>Model</p>
+                <input type="text" name="model" #model autocomplete="off">
+            </div> 
+            <div class="section" id="color">
+                <p>Color</p>
+                <input type="text" name="color" #color autocomplete="off">
+            </div>
+            <div class="section" id="price">
+                <p>Price</p>
+                <input type="number" name="price" #price autocomplete="off">
+            </div>
+            <div class="section" id="image">
+                <p>Image</p>
+                <input type="text" name="image" #image autocomplete="off">
+            </div>
+            <div class="section" id="buttons">
+                <div>
+                    <input type="reset" value="Clear">
+                </div>
+                <div>
+                    <input type="button" (click)="addCar(brand.value, model.value, color.value, price.value, image.value)" value="Add">
+                </div>
+            </div>
+        </div>
     </form>
 </div>

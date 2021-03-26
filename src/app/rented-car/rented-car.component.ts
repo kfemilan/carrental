@@ -10,6 +10,7 @@ export class RentedCarComponent implements OnInit {
 
   @Input() car: Car;
   @Output() ret = new EventEmitter<Car>();
+  @Output() extend = new EventEmitter<Car>();
 
   constructor() { }
 
