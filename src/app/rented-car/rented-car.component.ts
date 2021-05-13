@@ -36,10 +36,10 @@ export class RentedCarComponent implements OnInit {
   calculateTotal(){
     const today = new Date();
     const ret = this.car.returnDate.toDate();
-    const difference = today.valueOf() - ret.valueOf();
+    const difference = Math.ceil((today.valueOf() - ret.valueOf()) / 86400000);
     const total = this.car.price * this.car.rentLength;
     console.log(difference);
-    return difference <= 0 ? total : total*1.15;
+    return difference <= 0 ? total : total + Math.ceil((total*0.8)*difference);
   }
 
 }
